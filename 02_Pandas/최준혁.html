@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>연습문제01-04</title>
+<title>연습문제6-7</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13126,7 +13126,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13141,9 +13141,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-1">&#50672;&#49845; &#47928;&#51228; 1<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-1">&#182;</a></h4><ol>
-<li>임의로 두 개의 시리즈 객체를 만든다. 모두 문자열 인덱스를 가져야 하며 두 시리즈에 공통적으로 포함되지 않는 라벨이 있어야 한다.</li>
-<li>위에서 만든 두 시리즈 객체를 이용하여 사칙 연산을 한다.</li>
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-4.2.10">&#50672;&#49845; &#47928;&#51228; 4.2.10<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4.2.10">&#182;</a></h3><p>두 개의 데이터프레임을 만들고 merge 명령으로 합친다. 단 데이터프레임은 다음 조건을 만족해야 한다.</p>
+<ol>
+<li>각각 5 x 5 이상의 크기를 가진다.</li>
+<li>공통 열을 하나 이상 가진다. 다만 공통 열의 이름은 서로 다르다.</li>
 </ol>
 
 </div>
@@ -13151,13 +13152,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob1</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">38.83</span><span class="p">,</span> <span class="mi">1078</span><span class="p">,</span> <span class="mi">2775</span><span class="p">,</span> <span class="mi">3441</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;합격률&#39;</span><span class="p">,</span> <span class="s1">&#39;취득자수&#39;</span><span class="p">,</span> <span class="s1">&#39;응시자수&#39;</span><span class="p">,</span> <span class="s1">&#39;접수자수&#39;</span><span class="p">])</span>
-<span class="n">ob1</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;2016년 Adsp합격률&quot;</span>
-<span class="n">ob1</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;구분&quot;</span>
-<span class="n">ob1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;현재기온&#39;</span><span class="p">:[</span><span class="mf">30.3</span><span class="p">,</span> <span class="mf">33.2</span><span class="p">,</span> <span class="mf">32.8</span><span class="p">,</span> <span class="mf">32.2</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
+    <span class="s1">&#39;도시&#39;</span><span class="p">:[</span><span class="s1">&#39;서울&#39;</span><span class="p">,</span><span class="s1">&#39;청주&#39;</span><span class="p">,</span><span class="s1">&#39;대전&#39;</span><span class="p">,</span><span class="s1">&#39;전주&#39;</span><span class="p">,</span><span class="s1">&#39;울산&#39;</span><span class="p">]</span>
+<span class="p">},</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;도시&#39;</span><span class="p">,</span><span class="s1">&#39;현재기온&#39;</span><span class="p">])</span>
+<span class="n">df1</span>
 </pre></div>
 
     </div>
@@ -13170,18 +13172,62 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률       38.83
-취득자수    1078.00
-응시자수    2775.00
-접수자수    3441.00
-Name: 2016년 Adsp합격률, dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>도시</th>
+      <th>현재기온</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>서울</td>
+      <td>30.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>청주</td>
+      <td>33.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>대전</td>
+      <td>32.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>전주</td>
+      <td>32.2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>울산</td>
+      <td>32.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13195,10 +13241,11 @@ Name: 2016년 Adsp합격률, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">30.39</span><span class="p">,</span> <span class="mi">584</span><span class="p">,</span> <span class="mi">1922</span><span class="p">,</span> <span class="mi">2687</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;합격률&#39;</span><span class="p">,</span> <span class="s1">&#39;취득자수&#39;</span><span class="p">,</span> <span class="s1">&#39;응시자수&#39;</span><span class="p">,</span> <span class="s1">&#39;접수자수&#39;</span><span class="p">])</span>
-<span class="n">ob2</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;2015년 Adsp합격률&quot;</span>
-<span class="n">ob2</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;구분&quot;</span>
-<span class="n">ob2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;불쾌지수&#39;</span><span class="p">:[</span><span class="mi">82</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">83</span><span class="p">],</span>
+    <span class="s1">&#39;도시&#39;</span><span class="p">:[</span><span class="s1">&#39;서울&#39;</span><span class="p">,</span><span class="s1">&#39;청주&#39;</span><span class="p">,</span><span class="s1">&#39;대전&#39;</span><span class="p">,</span><span class="s1">&#39;전주&#39;</span><span class="p">,</span><span class="s1">&#39;울산&#39;</span><span class="p">]</span>
+<span class="p">},</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;도시&#39;</span><span class="p">,</span><span class="s1">&#39;불쾌지수&#39;</span><span class="p">])</span>
+<span class="n">df2</span>
 </pre></div>
 
     </div>
@@ -13215,14 +13262,58 @@ Name: 2016년 Adsp합격률, dtype: float64</pre>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률       30.39
-취득자수     584.00
-응시자수    1922.00
-접수자수    2687.00
-Name: 2015년 Adsp합격률, dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>도시</th>
+      <th>불쾌지수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>서울</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>청주</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>대전</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>전주</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>울산</td>
+      <td>83</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13236,7 +13327,7 @@ Name: 2015년 Adsp합격률, dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob1</span><span class="o">+</span><span class="n">ob2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13253,128 +13344,64 @@ Name: 2015년 Adsp합격률, dtype: float64</pre>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률       69.22
-취득자수    1662.00
-응시자수    4697.00
-접수자수    6128.00
-dtype: float64</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>도시</th>
+      <th>현재기온</th>
+      <th>불쾌지수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>서울</td>
+      <td>30.3</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>청주</td>
+      <td>33.2</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>대전</td>
+      <td>32.8</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>전주</td>
+      <td>32.2</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>울산</td>
+      <td>32.0</td>
+      <td>83</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob1</span><span class="o">-</span><span class="n">ob2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률       8.44
-취득자수    494.00
-응시자수    853.00
-접수자수    754.00
-dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob1</span><span class="o">*</span><span class="n">ob2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률     1.180044e+03
-취득자수    6.295520e+05
-응시자수    5.333550e+06
-접수자수    9.245967e+06
-dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ob1</span><span class="o">/</span><span class="n">ob2</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>구분
-합격률     1.277723
-취득자수    1.845890
-응시자수    1.443809
-접수자수    1.280610
-dtype: float64</pre>
 </div>
 
 </div>
@@ -13386,11 +13413,464 @@ dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-2">&#50672;&#49845; &#47928;&#51228; 2<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-2">&#182;</a></h4><p>다음 조건을 만족하는 임의의 데이터프레임을 하나 만든다.</p>
-<ol>
-<li>열의 갯수와 행의 갯수가 각각 5개 이상이어야 한다.</li>
-<li>열에는 정수, 문자열, 실수 자료형 데이터가 각각 1개 이상씩 포함되어 있어야 한다.</li>
-</ol>
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-4.2.11">&#50672;&#49845; &#47928;&#51228; 4.2.11<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4.2.11">&#182;</a></h3><p>어느 회사의 전반기(1월 ~ 6월) 실적을 나타내는 데이터프레임과 후반기(7월 ~ 12월) 실적을 나타내는 데이터프레임을 만든 뒤 합친다.
+실적 정보는 "매출", "비용", "이익" 으로 이루어진다. (이익 = 매출 - 비용).</p>
+<p>또한 1년간의 총 실적을 마지막 행으로 덧붙인다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;매출B$&#39;</span><span class="p">:[</span><span class="mi">110</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">410</span><span class="p">,</span><span class="mi">530</span><span class="p">,</span><span class="mi">620</span><span class="p">],</span>
+    <span class="s1">&#39;비용B$&#39;</span><span class="p">:[</span><span class="mi">140</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">290</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">390</span><span class="p">]},</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1월&#39;</span><span class="p">,</span> <span class="s1">&#39;2월&#39;</span><span class="p">,</span> <span class="s1">&#39;3월&#39;</span><span class="p">,</span> <span class="s1">&#39;4월&#39;</span><span class="p">,</span> <span class="s1">&#39;5월&#39;</span> <span class="p">,</span><span class="s1">&#39;6월&#39;</span><span class="p">],</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;매출B$&#39;</span><span class="p">,</span> <span class="s1">&#39;비용B$&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;매출B$&#39;</span><span class="p">:[</span><span class="mi">290</span><span class="p">,</span><span class="mi">470</span><span class="p">,</span><span class="mi">570</span><span class="p">,</span><span class="mi">690</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">100</span><span class="p">],</span>
+    <span class="s1">&#39;비용B$&#39;</span><span class="p">:[</span><span class="mi">210</span><span class="p">,</span><span class="mi">215</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">120</span><span class="p">]},</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;7월&#39;</span><span class="p">,</span> <span class="s1">&#39;8월&#39;</span><span class="p">,</span> <span class="s1">&#39;9월&#39;</span><span class="p">,</span> <span class="s1">&#39;10월&#39;</span><span class="p">,</span> <span class="s1">&#39;11월&#39;</span> <span class="p">,</span><span class="s1">&#39;12월&#39;</span><span class="p">],</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;매출B$&#39;</span><span class="p">,</span> <span class="s1">&#39;비용B$&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">])</span>
+<span class="n">df3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>매출B$</th>
+      <th>비용B$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1월</th>
+      <td>110</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>2월</th>
+      <td>150</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>3월</th>
+      <td>300</td>
+      <td>290</td>
+    </tr>
+    <tr>
+      <th>4월</th>
+      <td>410</td>
+      <td>270</td>
+    </tr>
+    <tr>
+      <th>5월</th>
+      <td>530</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <th>6월</th>
+      <td>620</td>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>7월</th>
+      <td>290</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <th>8월</th>
+      <td>470</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>9월</th>
+      <td>570</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>10월</th>
+      <td>690</td>
+      <td>270</td>
+    </tr>
+    <tr>
+      <th>11월</th>
+      <td>200</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>12월</th>
+      <td>100</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;이익B$&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;매출B$&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df3</span><span class="p">[</span><span class="s1">&#39;비용B$&#39;</span><span class="p">]</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;실적B$&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="n">df3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>매출B$</th>
+      <th>비용B$</th>
+      <th>이익B$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1월</th>
+      <td>110</td>
+      <td>140</td>
+      <td>-30</td>
+    </tr>
+    <tr>
+      <th>2월</th>
+      <td>150</td>
+      <td>200</td>
+      <td>-50</td>
+    </tr>
+    <tr>
+      <th>3월</th>
+      <td>300</td>
+      <td>290</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>4월</th>
+      <td>410</td>
+      <td>270</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>5월</th>
+      <td>530</td>
+      <td>300</td>
+      <td>230</td>
+    </tr>
+    <tr>
+      <th>6월</th>
+      <td>620</td>
+      <td>390</td>
+      <td>230</td>
+    </tr>
+    <tr>
+      <th>7월</th>
+      <td>290</td>
+      <td>210</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>8월</th>
+      <td>470</td>
+      <td>215</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>9월</th>
+      <td>570</td>
+      <td>150</td>
+      <td>420</td>
+    </tr>
+    <tr>
+      <th>10월</th>
+      <td>690</td>
+      <td>270</td>
+      <td>420</td>
+    </tr>
+    <tr>
+      <th>11월</th>
+      <td>200</td>
+      <td>100</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>12월</th>
+      <td>100</td>
+      <td>120</td>
+      <td>-20</td>
+    </tr>
+    <tr>
+      <th>실적B$</th>
+      <td>4440</td>
+      <td>2655</td>
+      <td>1785</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-1">&#50672;&#49845; &#47928;&#51228; 1<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-1">&#182;</a></h3><p>key1의 값을 기준으로 data1의 값을 분류하여 합계를 구한 결과를 시리즈가 아닌 데이터프레임으로 구한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;key1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;key2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;data1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+    <span class="s1">&#39;data2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">df2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>key1</th>
+      <th>key2</th>
+      <th>data1</th>
+      <th>data2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>one</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A</td>
+      <td>two</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B</td>
+      <td>one</td>
+      <td>3</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>two</td>
+      <td>4</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>A</td>
+      <td>one</td>
+      <td>5</td>
+      <td>50</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df2</span><span class="o">.</span><span class="n">key1</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()[</span><span class="s2">&quot;data1&quot;</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>data1</th>
+    </tr>
+    <tr>
+      <th>key1</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-2">&#50672;&#49845; &#47928;&#51228; 2<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-2">&#182;</a></h3><p>붓꽃(iris) 데이터에서 붓꽃 종(species)별로 꽃잎길이(sepal_length), 꽃잎폭(sepal_width) 등의 평균을 구하라.
+만약 붓꽃 종(species)이 표시되지 않았을 때 이 수치들을 이용하여 붓꽃 종을 찾아낼 수 있을지 생각하라.</p>
 
 </div>
 </div>
@@ -13400,15 +13880,21 @@ dtype: float64</pre>
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;서울&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;흐림&#39;</span><span class="p">,</span> <span class="mf">30.3</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">],</span>
-       <span class="s2">&quot;청주&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">33.2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">],</span>
-       <span class="s2">&quot;대전&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">32.8</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
-       <span class="s2">&quot;전주&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">32.2</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">],</span>
-       <span class="s2">&quot;울산&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름조금&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">],}</span>
-<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;현재일기&quot;</span><span class="p">,</span><span class="s1">&#39;현재기온&#39;</span><span class="p">,</span><span class="s1">&#39;불쾌지수&#39;</span><span class="p">,</span><span class="s1">&#39;습도%&#39;</span><span class="p">,</span><span class="s1">&#39;풍속km/h&#39;</span><span class="p">]</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;서울&#39;</span><span class="p">,</span> <span class="s1">&#39;청주&#39;</span><span class="p">,</span> <span class="s1">&#39;대전&#39;</span><span class="p">,</span> <span class="s1">&#39;전주&#39;</span><span class="p">,</span> <span class="s1">&#39;울산&#39;</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;iris&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iris</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">species</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13421,7 +13907,7 @@ dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -13444,53 +13930,40 @@ dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>서울</th>
-      <th>청주</th>
-      <th>대전</th>
-      <th>전주</th>
-      <th>울산</th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+    </tr>
+    <tr>
+      <th>species</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>현재일기</th>
-      <td>흐림</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름조금</td>
+      <th>setosa</th>
+      <td>5.006</td>
+      <td>3.428</td>
+      <td>1.462</td>
+      <td>0.246</td>
     </tr>
     <tr>
-      <th>현재기온</th>
-      <td>30.3</td>
-      <td>33.2</td>
-      <td>32.8</td>
-      <td>32.2</td>
-      <td>32</td>
+      <th>versicolor</th>
+      <td>5.936</td>
+      <td>2.770</td>
+      <td>4.260</td>
+      <td>1.326</td>
     </tr>
     <tr>
-      <th>불쾌지수</th>
-      <td>82</td>
-      <td>84</td>
-      <td>85</td>
-      <td>86</td>
-      <td>83</td>
-    </tr>
-    <tr>
-      <th>습도%</th>
-      <td>69</td>
-      <td>59</td>
-      <td>65</td>
-      <td>78</td>
-      <td>64</td>
-    </tr>
-    <tr>
-      <th>풍속km/h</th>
-      <td>14.8</td>
-      <td>8.3</td>
-      <td>14</td>
-      <td>10.4</td>
-      <td>14.8</td>
+      <th>virginica</th>
+      <td>6.588</td>
+      <td>2.974</td>
+      <td>5.552</td>
+      <td>2.026</td>
     </tr>
   </tbody>
 </table>
@@ -13506,23 +13979,9 @@ dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-3">&#50672;&#49845; &#47928;&#51228; 3<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-3">&#182;</a></h4><p>다음 데이터프레임에서 지정하는 데이터를 뽑아내거나 처리하라.</p>
-
-<pre><code>data = {
-    "국어": [80, 90, 70, 30],
-    "영어": [90, 70, 60, 40],
-    "수학": [90, 60, 80, 70],
-}
-columns = ["국어", "영어", "수학"]
-index = ["춘향", "몽룡", "향단", "방자"]
-df = pd.DataFrame(data, index=index, columns=columns)</code></pre>
-<ol>
-<li>모든 학생의 수학 점수를 시리즈로 나타낸다.</li>
-<li>모든 학생의 국어와 영어 점수를 데이터 프레임으로 나타낸다.</li>
-<li>모든 학생의 각 과목 평균 점수를 새로운 열로 추가한다.</li>
-<li>방자의 영어 점수를 80점으로 수정하고 평균 점수도 다시 계산한다.</li>
-<li>춘향의 점수를 데이터프레임으로 나타낸다.</li>
-<li>향단의 점수를 시리즈로 나타낸다.</li>
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-3">&#50672;&#49845; &#47928;&#51228; 3<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-3">&#182;</a></h3><ol>
+<li>팁의 비율이 요일과 점심/저녁 여부, 인원수에 어떤 영향을 받는지 살펴본다.</li>
+<li>어떤 요인이 가장 크게 작용하는지 판단할 수 있는 방법이 있는가?</li>
 </ol>
 
 </div>
@@ -13530,229 +13989,12 @@ df = pd.DataFrame(data, index=index, columns=columns)</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;국어&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
-    <span class="s2">&quot;영어&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
-    <span class="s2">&quot;수학&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span>
-<span class="p">}</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;국어&quot;</span><span class="p">,</span> <span class="s2">&quot;영어&quot;</span><span class="p">,</span> <span class="s2">&quot;수학&quot;</span><span class="p">]</span>
-<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;춘향&quot;</span><span class="p">,</span> <span class="s2">&quot;몽룡&quot;</span><span class="p">,</span> <span class="s2">&quot;향단&quot;</span><span class="p">,</span> <span class="s2">&quot;방자&quot;</span><span class="p">]</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;수학&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>춘향    90
-몽룡    60
-향단    80
-방자    70
-Name: 수학, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;국어&#39;</span><span class="p">,</span><span class="s1">&#39;영어&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>국어</th>
-      <th>영어</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>춘향</th>
-      <td>80</td>
-      <td>90</td>
-    </tr>
-    <tr>
-      <th>몽룡</th>
-      <td>90</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <th>향단</th>
-      <td>70</td>
-      <td>60</td>
-    </tr>
-    <tr>
-      <th>방자</th>
-      <td>30</td>
-      <td>40</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;평균&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;국어&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;영어&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;수학&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[37]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>국어</th>
-      <th>영어</th>
-      <th>수학</th>
-      <th>평균</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>춘향</th>
-      <td>80</td>
-      <td>90</td>
-      <td>90</td>
-      <td>86.67</td>
-    </tr>
-    <tr>
-      <th>몽룡</th>
-      <td>90</td>
-      <td>70</td>
-      <td>60</td>
-      <td>73.33</td>
-    </tr>
-    <tr>
-      <th>향단</th>
-      <td>70</td>
-      <td>60</td>
-      <td>80</td>
-      <td>70.00</td>
-    </tr>
-    <tr>
-      <th>방자</th>
-      <td>30</td>
-      <td>40</td>
-      <td>70</td>
-      <td>46.67</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;국어&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span>
-    <span class="s2">&quot;영어&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>
-    <span class="s2">&quot;수학&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">70</span><span class="p">],</span>
-<span class="p">}</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;국어&quot;</span><span class="p">,</span> <span class="s2">&quot;영어&quot;</span><span class="p">,</span> <span class="s2">&quot;수학&quot;</span><span class="p">]</span>
-<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;춘향&quot;</span><span class="p">,</span> <span class="s2">&quot;몽룡&quot;</span><span class="p">,</span> <span class="s2">&quot;향단&quot;</span><span class="p">,</span> <span class="s2">&quot;방자&quot;</span><span class="p">]</span>
-<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df2</span><span class="p">[</span><span class="s2">&quot;평균&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;국어&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;영어&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">df2</span><span class="p">[</span><span class="s2">&quot;수학&quot;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">df2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
+<span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tips</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">tips</span><span class="p">[</span><span class="s1">&#39;total_bill&#39;</span><span class="p">]</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13788,40 +14030,71 @@ Name: 수학, dtype: int64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>국어</th>
-      <th>영어</th>
-      <th>수학</th>
-      <th>평균</th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th>tip_pct</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>춘향</th>
-      <td>80</td>
-      <td>90</td>
-      <td>90</td>
-      <td>86.67</td>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.059447</td>
     </tr>
     <tr>
-      <th>몽룡</th>
-      <td>90</td>
-      <td>70</td>
-      <td>60</td>
-      <td>73.33</td>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.160542</td>
     </tr>
     <tr>
-      <th>향단</th>
-      <td>70</td>
-      <td>60</td>
-      <td>80</td>
-      <td>70.00</td>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+      <td>0.166587</td>
     </tr>
     <tr>
-      <th>방자</th>
-      <td>30</td>
-      <td>80</td>
-      <td>70</td>
-      <td>60.00</td>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+      <td>0.139780</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+      <td>0.146808</td>
     </tr>
   </tbody>
 </table>
@@ -13836,10 +14109,11 @@ Name: 수학, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1번</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13852,7 +14126,96 @@ Name: 수학, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[59]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>size</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Lunch</th>
+      <td>0.202752</td>
+      <td>0.165750</td>
+      <td>0.153226</td>
+      <td>0.145515</td>
+      <td>0.121389</td>
+      <td>0.173706</td>
+    </tr>
+    <tr>
+      <th>Dinner</th>
+      <td>0.231832</td>
+      <td>0.165704</td>
+      <td>0.151995</td>
+      <td>0.146017</td>
+      <td>0.146522</td>
+      <td>0.103799</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2번</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span> <span class="s2">&quot;smoker&quot;</span><span class="p">,</span><span class="s2">&quot;day&quot;</span><span class="p">,</span><span class="s2">&quot;time&quot;</span><span class="p">,</span><span class="s2">&quot;size&quot;</span><span class="p">])[[</span><span class="s2">&quot;tip_pct&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -13875,19 +14238,478 @@ Name: 수학, dtype: int64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>국어</th>
-      <th>영어</th>
-      <th>수학</th>
-      <th>평균</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>tip_pct</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>춘향</th>
-      <td>80</td>
-      <td>90</td>
-      <td>90</td>
-      <td>86.67</td>
+      <th rowspan="30" valign="top">Male</th>
+      <th rowspan="30" valign="top">Yes</th>
+      <th rowspan="12" valign="top">Thur</th>
+      <th rowspan="6" valign="top">Lunch</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.154443</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.213789</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.194837</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Dinner</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Fri</th>
+      <th rowspan="6" valign="top">Lunch</th>
+      <th>1</th>
+      <td>0.223776</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.149328</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Dinner</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.129415</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.117750</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Sat</th>
+      <th rowspan="6" valign="top">Lunch</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="30" valign="top">Female</th>
+      <th rowspan="30" valign="top">No</th>
+      <th rowspan="6" valign="top">Fri</th>
+      <th rowspan="6" valign="top">Dinner</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.142857</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Sat</th>
+      <th rowspan="6" valign="top">Lunch</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Dinner</th>
+      <th>1</th>
+      <td>0.137931</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.147519</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.162473</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.118415</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="12" valign="top">Sun</th>
+      <th rowspan="6" valign="top">Lunch</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">Dinner</th>
+      <th>1</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.182575</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.161718</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.146998</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.172194</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>192 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#50672;&#49845;-&#47928;&#51228;-4">&#50672;&#49845; &#47928;&#51228; 4<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4">&#182;</a></h3><p>타이타닉 승객 데이터를 이용하여 다음 분석을 실시하라. 데이터는 다음과 같이 받을 수 있다.</p>
+
+<pre><code>titanic = sns.load_dataset("titanic")</code></pre>
+<ol>
+<li><code>qcut</code> 명령으로 세 개의 나이 그룹을 만든다.</li>
+<li>성별, 선실, 나이 그룹에 의한 생존율을 데이터프레임으로 계산한다. 
+행에는 성별 및 나이 그룹에 대한 다중 인덱스를 사용하고 열에는 선실 인덱스를 사용한다.</li>
+<li>성별 및 선실에 의한 생존율을 피봇 데이터 형태로 만든다.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1번</span>
+<span class="n">titanic</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">)</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;미성년&quot;</span><span class="p">,</span> <span class="s2">&quot;성년&quot;</span><span class="p">,</span> <span class="s2">&quot;노년&quot;</span><span class="p">]</span>
+<span class="n">titanic_age</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;age_class&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic_age</span>
+<span class="n">titanic</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[76]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>embarked</th>
+      <th>class</th>
+      <th>who</th>
+      <th>adult_male</th>
+      <th>deck</th>
+      <th>embark_town</th>
+      <th>alive</th>
+      <th>alone</th>
+      <th>age_class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13.00</td>
+      <td>S</td>
+      <td>Second</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>True</td>
+      <td>성년</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.00</td>
+      <td>S</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>B</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>True</td>
+      <td>미성년</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>23.45</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.00</td>
+      <td>C</td>
+      <td>First</td>
+      <td>man</td>
+      <td>True</td>
+      <td>C</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>True</td>
+      <td>성년</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.75</td>
+      <td>Q</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Queenstown</td>
+      <td>no</td>
+      <td>True</td>
+      <td>성년</td>
     </tr>
   </tbody>
 </table>
@@ -13902,67 +14724,13 @@ Name: 수학, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="o">=</span><span class="n">df2</span><span class="o">.</span><span class="n">T</span>
-<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;향단&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[58]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>국어    70.0
-영어    60.0
-수학    80.0
-평균    70.0
-Name: 향단, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#44256;&#44553;&#51064;&#45937;&#49905;">&#44256;&#44553;&#51064;&#45937;&#49905;<a class="anchor-link" href="#&#44256;&#44553;&#51064;&#45937;&#49905;">&#182;</a></h3><ol>
-<li>모든 행과 열에 라벨을 가지는 5 x 5 이상의 크기를 가지는 데이터프레임을 만든다.</li>
-<li>10가지 이상의 방법으로 특정한 행과 열을 선택한다.</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;서울&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;흐림&#39;</span><span class="p">,</span> <span class="mf">30.3</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">],</span>
-       <span class="s2">&quot;청주&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">33.2</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">],</span>
-       <span class="s2">&quot;대전&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">32.8</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
-       <span class="s2">&quot;전주&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름많음&#39;</span><span class="p">,</span> <span class="mf">32.2</span><span class="p">,</span> <span class="mi">86</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">],</span>
-       <span class="s2">&quot;울산&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;구름조금&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">],}</span>
-<span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;현재일기&quot;</span><span class="p">,</span><span class="s1">&#39;현재기온&#39;</span><span class="p">,</span><span class="s1">&#39;불쾌지수&#39;</span><span class="p">,</span><span class="s1">&#39;습도&#39;</span><span class="p">,</span><span class="s1">&#39;풍속&#39;</span><span class="p">]</span>
-<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;서울&#39;</span><span class="p">,</span> <span class="s1">&#39;청주&#39;</span><span class="p">,</span> <span class="s1">&#39;대전&#39;</span><span class="p">,</span> <span class="s1">&#39;전주&#39;</span><span class="p">,</span> <span class="s1">&#39;울산&#39;</span><span class="p">]</span>
-<span class="n">weather</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">weather</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#2번</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">titanic</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;age_class&#39;</span><span class="p">])[</span><span class="s1">&#39;survived&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+<span class="n">data2</span>
 </pre></div>
 
     </div>
@@ -13998,53 +14766,57 @@ Name: 향단, dtype: float64</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>서울</th>
-      <th>청주</th>
-      <th>대전</th>
-      <th>전주</th>
-      <th>울산</th>
+      <th>class</th>
+      <th>First</th>
+      <th>Second</th>
+      <th>Third</th>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <th>age_class</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>현재일기</th>
-      <td>흐림</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름조금</td>
+      <th rowspan="3" valign="top">female</th>
+      <th>미성년</th>
+      <td>0.928571</td>
+      <td>1.000000</td>
+      <td>0.465116</td>
     </tr>
     <tr>
-      <th>현재기온</th>
-      <td>30.3</td>
-      <td>33.2</td>
-      <td>32.8</td>
-      <td>32.2</td>
-      <td>32</td>
+      <th>성년</th>
+      <td>0.971014</td>
+      <td>0.896552</td>
+      <td>0.407407</td>
     </tr>
     <tr>
-      <th>불쾌지수</th>
-      <td>82</td>
-      <td>84</td>
-      <td>85</td>
-      <td>86</td>
-      <td>83</td>
+      <th>노년</th>
+      <td>1.000000</td>
+      <td>NaN</td>
+      <td>1.000000</td>
     </tr>
     <tr>
-      <th>습도</th>
-      <td>69</td>
-      <td>59</td>
-      <td>65</td>
-      <td>78</td>
-      <td>64</td>
+      <th rowspan="3" valign="top">male</th>
+      <th>미성년</th>
+      <td>0.500000</td>
+      <td>0.357143</td>
+      <td>0.180556</td>
     </tr>
     <tr>
-      <th>풍속</th>
-      <td>14.8</td>
-      <td>8.3</td>
-      <td>14</td>
-      <td>10.4</td>
-      <td>14.8</td>
+      <th>성년</th>
+      <td>0.426829</td>
+      <td>0.051948</td>
+      <td>0.132948</td>
+    </tr>
+    <tr>
+      <th>노년</th>
+      <td>0.083333</td>
+      <td>0.333333</td>
+      <td>0.000000</td>
     </tr>
   </tbody>
 </table>
@@ -14059,10 +14831,11 @@ Name: 향단, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;현재일기&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#3번</span>
+<span class="n">titanic</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">([</span><span class="s1">&#39;survived&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14075,45 +14848,7 @@ Name: 향단, dtype: float64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[78]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>서울      흐림
-청주    구름많음
-대전    구름많음
-전주    구름많음
-울산    구름조금
-Name: 현재일기, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;현재기온&#39;</span><span class="p">:</span><span class="s1">&#39;불쾌지수&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[83]:</div>
+    <div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -14136,962 +14871,45 @@ Name: 현재일기, dtype: object</pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>서울</th>
-      <th>청주</th>
-      <th>대전</th>
-      <th>전주</th>
-      <th>울산</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>현재기온</th>
-      <td>30.3</td>
-      <td>33.2</td>
-      <td>32.8</td>
-      <td>32.2</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>불쾌지수</th>
-      <td>82</td>
-      <td>84</td>
-      <td>85</td>
-      <td>86</td>
-      <td>83</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;현재기온&#39;</span><span class="p">,</span> <span class="s1">&#39;대전&#39;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[84]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>32.8</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;습도&#39;</span><span class="p">,:]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[86]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>서울    69
-청주    59
-대전    65
-전주    78
-울산    64
-Name: 습도, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;습도&#39;</span><span class="p">,</span><span class="s1">&#39;불쾌지수&#39;</span><span class="p">],[</span><span class="s1">&#39;서울&#39;</span><span class="p">,</span><span class="s1">&#39;대전&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[87]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
       <th></th>
-      <th>서울</th>
-      <th>대전</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>습도</th>
-      <td>69</td>
-      <td>65</td>
+      <th>survived</th>
     </tr>
     <tr>
-      <th>불쾌지수</th>
-      <td>82</td>
-      <td>85</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;현재기온&#39;</span><span class="p">,</span><span class="s1">&#39;풍속&#39;</span><span class="p">],[</span><span class="s1">&#39;전주&#39;</span><span class="p">,</span><span class="s1">&#39;울산&#39;</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[95]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
+      <th>sex</th>
+      <th>class</th>
       <th></th>
-      <th>전주</th>
-      <th>울산</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>현재기온</th>
-      <td>32.2</td>
-      <td>32</td>
+      <th rowspan="3" valign="top">female</th>
+      <th>First</th>
+      <td>0.968085</td>
     </tr>
     <tr>
-      <th>풍속</th>
-      <td>10.4</td>
-      <td>14.8</td>
+      <th>Second</th>
+      <td>0.921053</td>
+    </tr>
+    <tr>
+      <th>Third</th>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">male</th>
+      <th>First</th>
+      <td>0.368852</td>
+    </tr>
+    <tr>
+      <th>Second</th>
+      <td>0.157407</td>
+    </tr>
+    <tr>
+      <th>Third</th>
+      <td>0.135447</td>
     </tr>
   </tbody>
 </table>
 </div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[93]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>서울</th>
-      <th>청주</th>
-      <th>대전</th>
-      <th>전주</th>
-      <th>울산</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>현재일기</th>
-      <td>흐림</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름조금</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[96]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>현재일기    구름많음
-현재기온    32.8
-Name: 대전, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[97]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>전주    구름많음
-울산    구름조금
-Name: 현재일기, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[98]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>청주</th>
-      <th>대전</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>불쾌지수</th>
-      <td>84</td>
-      <td>85</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[99]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>서울    14.8
-청주     8.3
-대전      14
-전주    10.4
-울산    14.8
-Name: 풍속, dtype: object</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">weather</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span>
-<span class="n">weather</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[100]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>서울</th>
-      <th>청주</th>
-      <th>대전</th>
-      <th>전주</th>
-      <th>울산</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>현재일기</th>
-      <td>흐림</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름조금</td>
-    </tr>
-    <tr>
-      <th>현재기온</th>
-      <td>30.3</td>
-      <td>33.2</td>
-      <td>32.8</td>
-      <td>32.2</td>
-      <td>32</td>
-    </tr>
-    <tr>
-      <th>불쾌지수</th>
-      <td>82</td>
-      <td>84</td>
-      <td>85</td>
-      <td>86</td>
-      <td>83</td>
-    </tr>
-    <tr>
-      <th>습도</th>
-      <td>69</td>
-      <td>59</td>
-      <td>65</td>
-      <td>78</td>
-      <td>64</td>
-    </tr>
-    <tr>
-      <th>풍속</th>
-      <td>29.6</td>
-      <td>16.6</td>
-      <td>28</td>
-      <td>20.8</td>
-      <td>29.6</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-4.2.5">&#50672;&#49845; &#47928;&#51228; 4.2.5<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4.2.5">&#182;</a></h4><p>다음 명령으로 타이타닉호 승객 데이터를 데이터프레임으로 읽어온다. 이 명령을 실행하려면 seaborn 패키지가 설치되어 있어야 한다.</p>
-
-<pre><code>import seaborn as sns
-titanic = sns.load_dataset("titanic")</code></pre>
-<p>타이타닉호 승객 데이터의 데이터 값을 각 열마다 구해본다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">titanic</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">)</span>
-<span class="n">titanic</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[105]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>survived       891
-pclass         891
-sex            891
-age            714
-sibsp          891
-parch          891
-fare           891
-embarked       889
-class          891
-who            891
-adult_male     891
-deck           203
-embark_town    889
-alive          891
-alone          891
-dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-4.2.6">&#50672;&#49845; &#47928;&#51228; 4.2.6<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4.2.6">&#182;</a></h4><p>타이타닉호 승객중 성별(sex) 인원수, 나이별(age) 인원수, 선실별(class) 인원수, 사망/생존(alive) 인원수를 구하라.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">sex</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[110]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>male      577
-female    314
-Name: sex, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[119]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.42      1
-0.67      1
-0.75      2
-0.83      2
-0.92      1
-1.00      7
-2.00     10
-3.00      6
-4.00     10
-5.00      4
-6.00      3
-7.00      3
-8.00      4
-9.00      8
-10.00     2
-11.00     4
-12.00     1
-13.00     2
-14.00     6
-14.50     1
-15.00     5
-16.00    17
-17.00    13
-18.00    26
-19.00    25
-20.00    15
-20.50     1
-21.00    24
-22.00    27
-23.00    15
-         ..
-44.00     9
-45.00    12
-45.50     2
-46.00     3
-47.00     9
-48.00     9
-49.00     6
-50.00    10
-51.00     7
-52.00     6
-53.00     1
-54.00     8
-55.00     2
-55.50     1
-56.00     4
-57.00     2
-58.00     5
-59.00     2
-60.00     4
-61.00     3
-62.00     4
-63.00     2
-64.00     2
-65.00     3
-66.00     1
-70.00     2
-70.50     1
-71.00     2
-74.00     1
-80.00     1
-Name: age, Length: 88, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">pclass</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[121]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>1    216
-2    184
-3    491
-Name: pclass, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="o">.</span><span class="n">alive</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>no     549
-yes    342
-Name: alive, dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="&#50672;&#49845;-&#47928;&#51228;-4.2.7">&#50672;&#49845; &#47928;&#51228; 4.2.7<a class="anchor-link" href="#&#50672;&#49845;-&#47928;&#51228;-4.2.7">&#182;</a></h4>
-<pre><code>bins = [1, 15, 25, 35, 60, 99]
-labels = ["미성년자", "청년", "중년", "장년", "노년"]</code></pre>
-<p>타이타닉호 승객을 사망자와 생존자 그룹으로 나누고 각 그룹에 대해 '미성년자', '청년', '중년', '장년', '노년' 승객의 비율을 구한다. 각 그룹 별로 비율의 전체 합은 1이 되어야 한다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[165]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">99</span><span class="p">]</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;미성년자&quot;</span><span class="p">,</span> <span class="s2">&quot;청년&quot;</span><span class="p">,</span> <span class="s2">&quot;중년&quot;</span><span class="p">,</span> <span class="s2">&quot;장년&quot;</span><span class="p">,</span> <span class="s2">&quot;노년&quot;</span><span class="p">]</span>
-<span class="n">cats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">ages</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[169]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;agegroup&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">cats</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;agegroup&#39;</span><span class="p">][</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[167]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>청년      0.338863
-장년      0.277251
-중년      0.267773
-미성년자    0.075829
-노년      0.040284
-Name: agegroup, dtype: float64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[168]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;agegroup&#39;</span><span class="p">][</span><span class="n">titanic</span><span class="p">[</span><span class="s1">&#39;survived&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[168]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>중년      0.298561
-장년      0.280576
-청년      0.269784
-미성년자    0.133094
-노년      0.017986
-Name: agegroup, dtype: float64</pre>
 </div>
 
 </div>
