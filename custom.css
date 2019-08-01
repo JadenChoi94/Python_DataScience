@@ -1,0 +1,9 @@
+.CodeMirror pre {
+    font-family: D2Coding ligature;
+    font-size: 12pt;
+    line-height: 120%;
+}
+div.output pre {
+    font-family: D2Coding ligature;
+    font-size: 12pt;
+}
