@@ -1,7 +1,13 @@
 ### 커피빈 매장 크롤링하기
 
 # 모듈 준비하기
+
+import time
+from bs4 import BeautifulSoup
+import bs4
 from selenium import webdriver
+import pandas as pd
+
 chromedriver_dir = 'D:/workspace/Python_DataScience/Coffee_index/chromedriver.exe'
 driver = webdriver.Chrome(chromedriver_dir)
 
@@ -11,6 +17,7 @@ lat = []
 log = []
 
 for i in range(1, 14):
+
     driver.get('https://www.coffeebeankorea.com/store/store.asp')
     time.sleep(3)
 
@@ -30,6 +37,7 @@ for i in range(1, 14):
     sido = driver.find_element_by_xpath(x1 + x2 + x3)
     sido.click()
     time.sleep(3)
+
 
     source = driver.page_source
     bs = bs4.BeautifulSoup(source,'html.parser')
